@@ -155,6 +155,7 @@ class ParallelSelfAttention(MegatronModule):
         """Get query, key, and value and transpose to
         get size [b, np, s, hn].
         """
+        # hidden_states [b, s, h]
         # Attention heads. [b, s, hp]
         mixed_x_layer = self.query_key_value(hidden_states)
         (mixed_query_layer,
